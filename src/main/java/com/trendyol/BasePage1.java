@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Random;
 
 public class BasePage1  {
-    WebDriver webDriver;
+    WebDriver driver;
     ChromeOptions options = new ChromeOptions();
     WebElement webElement = null;
     WebDriverWait wait;
@@ -21,27 +21,27 @@ public class BasePage1  {
 
         switch (key) {
             case "id":
-                webElement = webDriver.findElement(By.id(value));
+                webElement = driver.findElement(By.id(value));
                 webElement.click();
                 break;
             case "css":
-                webElement = webDriver.findElement(By.cssSelector(value));
+                webElement = driver.findElement(By.cssSelector(value));
                 webElement.click();
                 break;
             case "xpath":
-                webElement = webDriver.findElement(By.xpath(value));
+                webElement = driver.findElement(By.xpath(value));
                 webElement.click();
                 break;
             case "classname":
-                webElement = webDriver.findElement(By.className(value));
+                webElement = driver.findElement(By.className(value));
                 webElement.click();
                 break;
             case "name":
-                webElement = webDriver.findElement(By.name(value));
+                webElement = driver.findElement(By.name(value));
                 webElement.click();
                 break;
             case "linkText":
-                webElement = webDriver.findElement(By.linkText(value));
+                webElement = driver.findElement(By.linkText(value));
                 webElement.click();
                 break;
             default:
@@ -66,15 +66,15 @@ public class BasePage1  {
     }
 
     public void webElementMoveTo(By by) {
-        webElement = webDriver.findElement(by);
-        Actions actions = new Actions(webDriver);
+        webElement = driver.findElement(by);
+        Actions actions = new Actions(driver);
 
         actions.moveToElement(webElement).build().perform();
 
     }
 
     public WebElement webElementlerdenBul(int i, By by) {
-        webElement = webDriver.findElements(by).get(i);
+        webElement = driver.findElements(by).get(i);
         return webElement;
     }
 

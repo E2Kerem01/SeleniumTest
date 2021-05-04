@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 
 public class ProductPage extends BasePage1 {
 
-    public ProductPage(WebDriver webDriver) {
-        this.webDriver=webDriver;
+    public ProductPage(WebDriver driver) {
+        this.driver=driver;
     }
 
     public void sepeteekle() throws InterruptedException {
@@ -13,7 +13,7 @@ public class ProductPage extends BasePage1 {
 
         //switch.to işlemi
         webelementiBekle(2);
-        webDriver.switchTo().window(webDriver.getWindowHandles().toArray()[1].toString());
+        driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
         webelementiBekle(2);
 
         //Sepete ekleme
@@ -22,7 +22,5 @@ public class ProductPage extends BasePage1 {
 
     }
 
-    public  BasketPage BasketpageNavigate(){
-        return new BasketPage(webDriver);
-    }
+
 }

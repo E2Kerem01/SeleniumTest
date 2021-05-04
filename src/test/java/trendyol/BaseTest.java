@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
 
 
-    WebDriver webDriver;
+    WebDriver driver;
     ChromeOptions options = new ChromeOptions();
 
     @Before
@@ -19,15 +19,15 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-notifications");
-        webDriver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
         options.addArguments("--disable-notifications");
-        webDriver.get("https:/www.google.com");
+        driver.get("https:/www.google.com");
 
     }
 
     @After
     public void tearDown() {
-        webDriver.quit();
+        driver.quit();
     }
 
 }

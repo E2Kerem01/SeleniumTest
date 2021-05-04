@@ -5,6 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class BasketPage extends BasePage1 {
 
+    public BasketPage(WebDriver driver) {
+        this.driver=driver;
+    }
+
     public void urunalma() throws InterruptedException {
         //Sepete gitme
         webElementiBul("css", "a[class='link account-basket']>p[class='link-text']");
@@ -20,7 +24,5 @@ public class BasketPage extends BasePage1 {
         webElementiBul("css", "i[class='i-logout']");
     }
 
-    public BasketPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
+
 }

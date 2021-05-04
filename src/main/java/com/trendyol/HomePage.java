@@ -5,27 +5,25 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage1 {
 
-    public HomePage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
     }
 
     // HOME PAGE
     public void girisyapma() throws InterruptedException {
 
         webElementiBul("css", "input[class='search-box']");
+        webelementiBekle(2);
         webElementiBul("css", ".aggrgtn-cntnr-wrppr .fltrs-wrppr:nth-of-type(2) .fltrs>a:nth-of-type(" + random(34) + ")");
         webelementiBekle(2);
         webElementiBul("css", ".search-app-container>.srch-rslt-cntnt");
         webelementiBekle(2);
         webElementiBul("css", ".aggrgtn-cntnr-wrppr .fltrs-wrppr:nth-of-type(3) .fltrs>a:nth-of-type(" + random(5) + ")");
         webelementiBekle(2);
-        int i = webDriver.findElements(By.cssSelector(".prdct-cntnr-wrppr>div")).size();
+        int i = driver.findElements(By.cssSelector(".prdct-cntnr-wrppr>div")).size();
         webElementiBul("css", ".prdct-cntnr-wrppr>div:nth-of-type(" + random(i) + ")");
         webelementiBekle(2);
 
     }
-    public ProductPage loginpageNavigate() throws InterruptedException {
-        webelementiBekle(2);
-        return new ProductPage(webDriver);
-    }
+
 }
