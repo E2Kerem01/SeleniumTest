@@ -4,23 +4,23 @@ pipeline {
         stage('git repo & clean') {
             steps {
                
-                bat "git clone https://github.com/E2Kerem01/Gauge-GittigidiyorV1.0"
-                bat "mvn clean -f Gauge-GittigidiyorV1.0"
+                bat "git clone https://github.com/E2Kerem01/TrendyolSeleniumTest"
+                bat "mvn clean -f TrendyolSeleniumTest"
             }
         }
         stage('install') {
             steps {
-                bat "mvn install -f Gauge-GittigidiyorV1.0"
+                bat "mvn install -f TrendyolSeleniumTest"
             }
         }
         stage('test') {
             steps {
-                bat "mvn test -f Gauge-GittigidiyorV1.0"
+                bat "mvn test -f TrendyolSeleniumTest0"
             }
         }
         stage('package') {
             steps {
-                bat "mvn package -f Gauge-GittigidiyorV1.0"
+                bat "mvn package -f TrendyolSeleniumTest"
             }
         }
     }
